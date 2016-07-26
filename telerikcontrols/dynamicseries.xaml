@@ -1,0 +1,87 @@
+﻿<Page
+    x:Class="telerikcontrols.dynamicseries"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:telerikcontrols"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:chart="using:Telerik.UI.Xaml.Controls.Chart"
+    xmlns:charting="using:Telerik.Charting"
+    xmlns:telerikPrimitives="using:Telerik.UI.Xaml.Controls.Primitives"
+
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <chart:RadCartesianChart PaletteName="DefaultLight" Margin="0,61,0,0" Grid.Row="1">
+            <chart:RadCartesianChart.VerticalAxis>
+                <chart:LinearAxis />
+            </chart:RadCartesianChart.VerticalAxis>
+            <chart:RadCartesianChart.HorizontalAxis>
+                <chart:CategoricalAxis />
+            </chart:RadCartesianChart.HorizontalAxis>
+
+            <chart:BarSeries x:Name="AverageRatingsSeries">
+                <chart:BarSeries.DataPoints>
+                    <charting:CategoricalDataPoint Value="4.4" Category="1.0"/>
+                    <charting:CategoricalDataPoint Value="4.5" Category="1.1" />
+                    <charting:CategoricalDataPoint Value="2.2" Category="1.2" />
+                </chart:BarSeries.DataPoints>
+            </chart:BarSeries>
+
+            <chart:BarSeries x:Name="RatingsCountSeries">
+                <chart:BarSeries.DataPoints>
+                    <charting:CategoricalDataPoint Value="162" Category="1.0" />
+                    <charting:CategoricalDataPoint Value="157" Category="1.1" />
+                    <charting:CategoricalDataPoint Value="161" Category="1.2" />
+                </chart:BarSeries.DataPoints>
+            </chart:BarSeries>
+
+            <chart:BarSeries x:Name="CrashSeries">
+                <chart:BarSeries.DataPoints>
+                    <charting:CategoricalDataPoint Value="5" Category="1.0" />
+                    <charting:CategoricalDataPoint Value="3" Category="1.1" />
+                    <charting:CategoricalDataPoint Value="17" Category="1.2" />
+                </chart:BarSeries.DataPoints>
+            </chart:BarSeries>
+
+            <chart:BarSeries x:Name="HangsSeries">
+                <chart:BarSeries.DataPoints>
+                    <charting:CategoricalDataPoint Value="2" Category="1.0" />
+                    <charting:CategoricalDataPoint Value="1" Category="1.1" />
+                    <charting:CategoricalDataPoint Value="13" Category="1.2" />
+                </chart:BarSeries.DataPoints>
+            </chart:BarSeries>
+
+            <chart:BarSeries x:Name="MemorySeries">
+                <chart:BarSeries.DataPoints>
+                    <charting:CategoricalDataPoint Value="5.67" Category="1.0" />
+                    <charting:CategoricalDataPoint Value="4.61" Category="1.1" />
+                    <charting:CategoricalDataPoint Value="29" Category="1.2" />
+                </chart:BarSeries.DataPoints>
+            </chart:BarSeries>
+
+        </chart:RadCartesianChart>
+
+        <telerikPrimitives:RadLegendControl HorizontalAlignment="Right" Height="140" Margin="0,-3,0,0" Grid.Row="1" Width="130">
+            <telerikPrimitives:RadLegendControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel />
+                </ItemsPanelTemplate>
+            </telerikPrimitives:RadLegendControl.ItemsPanel>
+            <telerikPrimitives:RadLegendControl.LegendItems>
+                <telerikPrimitives:LegendItem Fill="Blue" Title="Avg Ratings"/>
+                <telerikPrimitives:LegendItem Fill="Orange" Title="Ratings Count"/>
+                <telerikPrimitives:LegendItem Fill="Red" Title="Crashes"/>
+                <telerikPrimitives:LegendItem Fill="LightGray" Title="Hangs"/>
+                <telerikPrimitives:LegendItem Fill="Black" Title="Memory"/>
+            </telerikPrimitives:RadLegendControl.LegendItems>
+        </telerikPrimitives:RadLegendControl>
+
+    </Grid>
+
+</Page>
